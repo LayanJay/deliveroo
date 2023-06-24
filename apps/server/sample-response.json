@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "id": 23,
+      "categoryName": "Pizza",
+      "dishes": [
+        {
+          "id": 34,
+          "dishName": "Vegetable Pizza",
+          "ratings": [
+            {
+              "id": 12,
+              "rating": 4,
+              "comment": "Good and Yummy Pizza. Recommended!"
+            },
+            {
+              "id": 45,
+              "rating": 2,
+              "comment": "Bad customer experience"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "categoryName": "Burgers",
+      "dishes": [
+        {
+          "id": 12,
+          "dishName": "Chicken Ham Burger",
+          "ratings": [
+            {
+              "id": 90,
+              "rating": 5,
+              "comment": "Very cheap and tasty."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
