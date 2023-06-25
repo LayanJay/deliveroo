@@ -1,5 +1,6 @@
 dist
 swagger-output.json
+config/config.json
 
 # dependencies
 node_modules
