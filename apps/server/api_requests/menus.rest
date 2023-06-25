@@ -1,0 +1,6 @@
+GET http://localhost:4000/menus/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxheWFuQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkxheWFuIiwibGFzdE5hbWUiOiJKYXlhc2luZ2hlIiwiaWF0IjoxNjg3Njg5NDkwLCJleHAiOjE2ODc2OTEyOTB9.zK9ZNo0NNEAwCDnKE-yN_EkvM_8c1K4m2208-SjG2w4
+
+###
+GET http://localhost:4000/menus/1/7

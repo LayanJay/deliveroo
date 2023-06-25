@@ -1,0 +1,16 @@
+GET http://localhost:4000/restaurants
+
+###
+GET http://localhost:4000/restaurants/1
+
+###
+POST http://localhost:4000/restaurants
+{
+  "name": "New Restaurant",
+  "description": "New Restaurant Description",
+  "address": "New Restaurant Address",
+  "phone": "New Restaurant Phone",
+  "email": "New Restaurant Email",
+  "website": "New Restaurant Website",
+  "image": "New Restaurant Image"
+}

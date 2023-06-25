@@ -1,0 +1,37 @@
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+  "email": "layan@gmail.com",
+  "password": "123456"
+}
+
+###
+
+POST http://localhost:4000/auth/register
+Content-Type: application/json
+
+{
+  "email": "layan@gmail.com",
+  "firstName": "Layan",
+  "lastName": "Jayasinghe",
+  "password": "123456"
+}
+
+###
+
+POST http://localhost:4000/auth/logout
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxheWFuQGdtYWlsLmNvbSIsImlhdCI6MTY4NzY4NDYyOX0.zUmn4qx4SIgD4zioUsC36Hh1ku15p9mydi1eMmaji6U"
+}
+
+###
+
+POST http://localhost:4000/auth/refresh-token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxheWFuQGdtYWlsLmNvbSIsImlhdCI6MTY4NzcxODk3OH0.6fDnEM72QFriA-Xd0BJP6Og2lYCUa3PrBwVC5AjSNiI"
+}

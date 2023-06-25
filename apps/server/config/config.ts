@@ -1,8 +1,8 @@
 export const config = {
   development: {
-    username: 'root',
-    password: 'tmatdtp2@',
-    database: 'deliveroo',
+    username: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME,
     host: 'localhost',
     dialect: 'mysql',
   },

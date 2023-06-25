@@ -1,10 +1,13 @@
 // Import Express App
+import dotenv from 'dotenv';
 import db from './models';
 import app from './src/app';
 import logger from './src/logger';
 
+dotenv.config();
+
 // Config
-const port = 5000;
+const port = 4000;
 const host = `localhost`;
 const env = process.env.NODE_ENV || 'development';
 
