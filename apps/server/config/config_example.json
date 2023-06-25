@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "tmatdtp2@",
-    "database": "deliveroo",
+    "password": "your password here",
+    "database": "your database name here",
     "host": "localhost",
     "dialect": "mysql"
   },
