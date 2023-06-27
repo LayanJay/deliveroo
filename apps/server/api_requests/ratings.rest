@@ -1,1 +1,25 @@
+GET http://localhost:4000/ratings/1
+
+###
+GET http://localhost:4000/ratings/1/1
+
+###
+POST http://localhost:4000/ratings/1
+Content-Type: application/json
+
+{
+  "rating": 5,
+  "comment": "Great! Test Comment"
+}
+
+###
+PUT http://localhost:4000/ratings/11
+Content-Type: application/json
+
+{
+  "comment": "Great!"
+}
+
+###
+DELETE http://localhost:4000/ratings/11
 

@@ -51,7 +51,7 @@ export class RatingController {
         return res.status(400).json({ message: 'Missing dish id' });
       }
       const isValid = ratingValidator(req.body);
-      if (isValid) {
+      if (!isValid) {
         logger.error('[400] Invalid rating');
         return res.status(400).json({ message: 'Invalid rating' });
       }

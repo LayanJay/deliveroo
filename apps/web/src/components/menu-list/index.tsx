@@ -19,7 +19,7 @@ const MenuList = () => {
 
   return (
     <>
-      <div className='sticky top-16 md:top-[74px] z-40 bg-white flex items-center space-x-3 overflow-x-auto hide-scrollbar border-t border-slate-200 py-5 px-4 sm:px-6 md:px-14 -mx-4 sm:-mx-6 md:-mx-14 shadow-md shadow-slate-100 scroll-smooth'>
+      <div className='sticky top-16 md:top-[70px] z-40 bg-white flex items-center space-x-3 overflow-x-auto hide-scrollbar border-t border-slate-200 py-5 px-4 sm:px-6 md:px-14 -mx-4 sm:-mx-6 md:-mx-14 shadow-md shadow-slate-100 scroll-smooth'>
         {menuList.map((item, index) => (
           <a
             href={`#${item}`}
@@ -43,7 +43,7 @@ const MenuList = () => {
               <MenuCard key={menu.id} menu={menu} />
             ))}
           </div>
-          <div className='hidden lg:flex lg:flex-col lg:items-center lg:justify-center max-h-56 sticky lg:top-44 z-40 bg-white rounded-sm shadow-sm p-4'>
+          <div className='hidden lg:flex lg:flex-col lg:items-center lg:justify-center max-h-52 sticky lg:top-44 z-40 bg-white rounded-sm shadow-sm p-4'>
             <div className='flex flex-1 flex-col items-center justify-center w-full'>
               <ShoppingBagIcon size={32} className='text-slate-400 mb-3' />
               <p className='text-slate-400'>Your basket is empty</p>

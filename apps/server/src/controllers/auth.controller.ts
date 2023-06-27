@@ -196,11 +196,12 @@ export class AuthController {
   }
 
   public static generateAccessToken(user: any) {
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET as string, { expiresIn: '30m' });
+    // Set the expiration date of the token in between 15min to 30min for security reasons. Here we set it to 3h for testing purposes
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET as string, { expiresIn: '3h' });
   }
 
   static generateRefreshToken(user: any) {
-    return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET as string);
+    return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET as string, { expiresIn: '365d' });
   }
 
   static async getGoogleOAuthTokens(code: string): Promise<GoogleTokensResult> {
