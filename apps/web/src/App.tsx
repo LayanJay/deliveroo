@@ -1,15 +1,16 @@
-import getGoogleOAuthURL from './utils/getGoogleUrl';
+import Protected from './components/auth/protected';
+import Layout from './components/layout';
+import MenuList from './components/menu-list';
+import MainHeader from './components/restaurant-details/main-header';
 
 const App = () => {
   return (
-    <>
-      <div>
-        <a href={getGoogleOAuthURL()}>Login with Google</a>
-        <p className='text-3xl font-bold underline'>
-          Click on the Vite and React logos to learn more
-        </p>
-      </div>
-    </>
+    <Layout>
+      <Protected>
+        <MainHeader />
+        <MenuList />
+      </Protected>
+    </Layout>
   );
 };
 

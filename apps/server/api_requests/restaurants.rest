@@ -5,12 +5,27 @@ GET http://localhost:4000/restaurants/1
 
 ###
 POST http://localhost:4000/restaurants
+Content-Type: application/json
+
 {
   "name": "New Restaurant",
-  "description": "New Restaurant Description",
   "address": "New Restaurant Address",
   "phone": "New Restaurant Phone",
-  "email": "New Restaurant Email",
-  "website": "New Restaurant Website",
-  "image": "New Restaurant Image"
+  "image": "https://loremflickr.com/640/480/restaurant?lock=3533506323939328",
+  "tags": "Some tags",
+  "openingHours": "10AM",
+  "closingHours": "12AM",
+  "deliveryFee": 5,
+  "minimumOrderValue": 45
 }
+
+###
+PUT http://localhost:4000/restaurants/1
+Content-Type: application/json
+
+{
+  "name": "Charlie's Restaurant - Nugegoda"
+}
+
+###
+DELETE http://localhost:4000/restaurants/20

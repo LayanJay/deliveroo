@@ -5,6 +5,7 @@ const menuSchema = {
   type: 'object',
   properties: {
     categoryName: { type: 'string' },
+    isAvailable: { type: 'boolean' },
   },
   required: ['categoryName'],
   additionalProperties: false,

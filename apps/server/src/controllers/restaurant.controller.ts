@@ -32,6 +32,8 @@ export class RestaurantController {
 
   public static async createRestaurant(req: Request, res: Response) {
     try {
+      console.log(req.body);
+
       const isValid = restaurantValidator(req.body);
       if (!isValid) {
         logger.error('[400] Invalid restaurant');

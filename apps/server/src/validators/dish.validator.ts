@@ -5,8 +5,13 @@ const dishSchema = {
   type: 'object',
   properties: {
     dishName: { type: 'string' },
+    isAvailable: { type: 'boolean', default: true },
+    price: { type: 'number' },
+    description: { type: 'string' },
+    calories: { type: 'number' },
+    image: { type: 'string' },
   },
-  required: ['dishName'],
+  required: ['dishName', 'price', 'description', 'image'],
   additionalProperties: false,
 };
 

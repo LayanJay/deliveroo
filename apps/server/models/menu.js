@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Menu.init(
     {
       categoryName: DataTypes.STRING,
-      isAvailable: DataTypes.BOOLEAN,
+      isAvailable: { type: DataTypes.BOOLEAN, defaultValue: true },
     },
     {
       sequelize,

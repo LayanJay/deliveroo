@@ -7,7 +7,7 @@ const router: Router = express.Router();
 router.get('/:restaurantId', authenticateToken, MenuController.getMenus);
 router.get('/:restaurantId/:id', authenticateToken, MenuController.getMenu);
 router.post('/:restaurantId', MenuController.createMenu);
-router.put('/:restaurantId/:id', MenuController.updateMenu);
-router.delete('/:restaurantId/:id', MenuController.deleteMenu);
+router.put('/:id', MenuController.updateMenu);
+router.delete('/:id', MenuController.deleteMenu);
 
 export default router;

@@ -31,8 +31,8 @@ interface GoogleUserResult {
 }
 
 const accessTokenCookieOptions: CookieOptions = {
-  maxAge: 1800000, // 30 mins
-  httpOnly: true,
+  maxAge: 1080000, // 3h
+  httpOnly: false,
   domain: 'localhost',
   path: '/',
   sameSite: 'lax',
@@ -74,7 +74,7 @@ export class AuthController {
       res.cookie('accessToken', accessToken, accessTokenCookieOptions);
       res.cookie('refreshToken', refreshToken, refreshTokenCookieOptions);
 
-      return res.redirect(process.env.CLIENT_URL as string);
+      return res.status(200).json({ accessToken, refreshToken });
     } catch (error: any) {
       logger.error(`[500] Error  ${error.message}`);
       return res.status(500).json({ message: 'Error ' + JSON.stringify(error) });

@@ -1,6 +1,25 @@
 GET http://localhost:4000/menus/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxheWFuQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkxheWFuIiwibGFzdE5hbWUiOiJKYXlhc2luZ2hlIiwiaWF0IjoxNjg3Njg5NDkwLCJleHAiOjE2ODc2OTEyOTB9.zK9ZNo0NNEAwCDnKE-yN_EkvM_8c1K4m2208-SjG2w4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwiZmlyc3ROYW1lIjoiam9obiIsImxhc3ROYW1lIjoiZG9lIiwiaWF0IjoxNjg3ODM5MzM0LCJleHAiOjE2ODc4NDExMzR9.DE2h68MECFFOeBgdNL4LKZ0W92tnyKtPB_Hl9O1WBZc
 
 ###
 GET http://localhost:4000/menus/1/7
+
+###
+POST http://localhost:4000/menus/1
+Content-Type: application/json
+
+{
+  "categoryName": "Burgers"
+}
+
+###
+PUT http://localhost:4000/menus/7
+Content-Type: application/json
+
+{
+  "categoryName": "Salads"
+}
+
+###
+DELETE http://localhost:4000/menus/6

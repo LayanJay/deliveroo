@@ -16,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   Dish.init(
     {
       dishName: DataTypes.STRING,
-      isAvailable: DataTypes.BOOLEAN,
+      isAvailable: { type: DataTypes.BOOLEAN, defaultValue: true },
       price: DataTypes.FLOAT,
       description: DataTypes.STRING,
       image: DataTypes.STRING,
-      calories: DataTypes.FLOAT,
+      calories: { type: DataTypes.FLOAT, defaultValue: 0 },
     },
     {
       sequelize,

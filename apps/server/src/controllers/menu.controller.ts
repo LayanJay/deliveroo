@@ -65,8 +65,13 @@ export class MenuController {
         logger.error('[400] Invalid menu');
         return res.status(400).json({ message: 'Invalid menu' });
       }
+
       logger.info('[201] Successfully created menu');
-      const menu = await db.Menu.create(req.body);
+      const menu = await db.Menu.create({
+        ...req.body,
+        RestaurantId: req.params.restaurantId,
+      });
+
       return res.status(201).json(menu);
     } catch (error: any) {
       logger.error(`[500] Error  ${error.message}`);
@@ -76,17 +81,13 @@ export class MenuController {
 
   public static async updateMenu(req: Request, res: Response) {
     try {
-      if (!req.params.restaurantId) {
-        logger.error('[400] Missing restaurant id');
-        return res.status(400).json({ message: 'Missing restaurant id' });
-      }
       if (!req.params.id) {
         logger.error('[400] Missing menu id');
         return res.status(400).json({ message: 'Missing menu id' });
       }
       logger.info('[200] Successfully updated menu');
       const menu = await db.Menu.update(req.body, {
-        where: { id: req.params.id, restaurantId: req.params.restaurantId },
+        where: { id: req.params.id },
       });
       return res.status(200).json(menu);
     } catch (error: any) {
@@ -103,7 +104,7 @@ export class MenuController {
       }
       logger.info('[200] Successfully deleted menu');
       await db.Menu.destroy({
-        where: { id: req.params.id, restaurantId: req.params.restaurantId },
+        where: { id: req.params.id },
       });
       return res.status(200).json({ message: 'Menu deleted' });
     } catch (error: any) {
