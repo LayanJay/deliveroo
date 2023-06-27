@@ -1,14 +1,6 @@
-# Turborepo starter
+# Deliveroo
 
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+This is a demo project of Deliveroo app.
 
 ## What's inside?
 
@@ -16,11 +8,8 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `server`: a ExpressJS app
+- `web`: a ReactJS app
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -32,12 +21,57 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
+## Setup
+
+Run the following command:
+
+```sh
+pnpm install
+// This will install all dependencies for all apps and packages
+```
+
+## Environment Variable Setup
+
+To run this project successfully, you need to set up the following environment variables. These variables contain sensitive information such as secret keys and database credentials, so ensure that you keep them confidential.
+
+### Server
+
+1. Create an `.env` file in the root directory of the project. (Use .env.example as a template)
+
+2. Copy and paste the following environment variables into the `.env` file:
+
+```env
+# server/.env
+ACCESS_TOKEN_SECRET=<ACCESS_TOKEN_SECRET>
+REFRESH_TOKEN_SECRET=<REFRESH_TOKEN_SECRET>
+CLIENT_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=<GOOGLE_CLIENT_ID>
+GOOGLE_CLIENT_SECRET=<GOOGLE_CLIENT_SECRET>
+DATABASE_NAME=<DATABASE_NAME>
+DATABASE_USERNAME=<DATABASE_USERNAME>
+DATABASE_PASSWORD=<DATABASE_PASSWORD>
+```
+
+```env
+# web/.env
+VITE_GOOGLE_OAUTH_REDIRECT_URL=http://localhost:4000/auth/google
+VITE_GOOGLE_CLIENT_ID=<YOUR GOOGLE CLIENT ID GOES HERE>
+```
+
+3. Replace the `<...>` placeholder values with the actual values specific to your setup. For example, `<ACCESS_TOKEN_SECRET>` should be replaced with a secret key for your access tokens, `<GOOGLE_CLIENT_ID>` and `<GOOGLE_CLIENT_SECRET>` should be replaced with the corresponding values from your Google API credentials, and so on.
+
+4. Save the `.env` file.
+
+**Note:** Make sure not to commit and push the `.env` file to the repository, as it contains sensitive information. The file is already added to the `.gitignore` to prevent accidental commits.
+
+If you encounter any issues or have any questions, please don't hesitate to reach out for assistance.
+
 ### Build
 
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+// In the root directory
 pnpm build
 ```
 
@@ -46,36 +80,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+// In the root directory
 pnpm dev
+// This will start both the server and the web app
 ```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
