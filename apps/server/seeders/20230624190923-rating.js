@@ -6,7 +6,7 @@ const ratings = [...Array(10)].map(() => ({
   comment: faker.lorem.paragraph(),
   createdAt: new Date(),
   updatedAt: new Date(),
-  DishId: faker.number.int({ min: 1, max: 10 }),
+  DishId: faker.number.int({ min: 11, max: 40 }),
 }));
 
 /** @type {import('sequelize-cli').Migration} */

@@ -15,6 +15,13 @@ module.exports = {
       comment: {
         type: Sequelize.STRING,
       },
+      DishId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Dishes',
+          key: 'id',
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

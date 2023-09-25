@@ -5,7 +5,7 @@ import { authenticateToken } from '../middlewares/authenticateToken';
 const router: Router = express.Router();
 
 router.get('/:restaurantId', authenticateToken, MenuController.getMenus);
-router.get('/:restaurantId/:id', authenticateToken, MenuController.getMenu);
+router.get('/:restaurantId/:id', MenuController.getMenu);
 router.post('/:restaurantId', MenuController.createMenu);
 router.put('/:id', MenuController.updateMenu);
 router.delete('/:id', MenuController.deleteMenu);
